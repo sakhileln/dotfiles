@@ -1,0 +1,64 @@
+{
+    "workbench.colorTheme": "Monokai Pro (Filter Machine)",
+    "workbench.iconTheme": "Monokai Pro (Filter Machine) Icons",
+    "editor.fontFamily": "'Cascadia Code', Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontSize": 13,
+    "editor.lineHeight": 1.4,
+    "terminal.integrated.fontFamily": "Cascadia Code PL",
+    "terminal.integrated.lineHeight": 1.3,
+    "terminal.integrated.fontSize": 13,
+    "editor.guides.bracketPairs": true,
+    "editor.fontLigatures": "'calt', 'ss01'",
+    "editor.detectIndentation": false,
+    "editor.minimap.enabled": false,
+    "editor.formatOnPaste": true,
+    "editor.suggestSelection": "first",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.accessibilitySupport": "off",
+    "security.workspace.trust.untrustedFiles": "open",
+    "files.autoSave": "afterDelay",
+    "workbench.editorAssociations": {
+        "*.db": "default"
+    },
+    "explorer.fileNesting.patterns": {
+        "*.ts": "${capture}.js",
+        "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+        "*.jsx": "${capture}.js",
+        "*.tsx": "${capture}.ts",
+        "tsconfig.json": "tsconfig.*.json",
+        "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb",
+        "*.sqlite": "${capture}.${extname}-*",
+        "*.db": "${capture}.${extname}-*",
+        "*.sqlite3": "${capture}.${extname}-*",
+        "*.db3": "${capture}.${extname}-*",
+        "*.sdb": "${capture}.${extname}-*",
+        "*.s3db": "${capture}.${extname}-*"
+    },
+    "python": {
+        "analysis": {
+            "typeCheckingMode": "basic" // Enable basic type hinting with Ruff
+        },
+        "linting": {
+            "enabled": true, // Enable linting for Python
+            "ruffEnabled": true // Enable Ruff as the linter (must have "charliermarsh.ruff" extension installed)
+        },
+        "formatting": {
+            "provider": "black", // Use Black for Python formatting
+            "blackArgs": [
+                "--line-length",
+                "88"
+            ], // Optional: line length for Black
+            "formatOnSave": true // Automatically format Python code on save using Black
+        },
+        "sortImports": {
+            "path": "isort" // Organize imports with isort
+        }
+    },
+    "editor.formatOnSave": true,
+    "ruff.lineLength": 79,
+    "window.titleBarStyle": "custom" // General format on save for all files
+}
+
+
+// Themes: Monokai Pro, Cobalt2, Night Owl, Dracula, Kimbie Dark, Abyss
+// Extensions: GitLens, Postman
