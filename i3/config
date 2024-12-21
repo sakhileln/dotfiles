@@ -35,7 +35,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 # Randomly select any wallpaper from given folder
-exec --no-startup-id feh --randomize --bg-fill /usr/share/backgrounds/walls/* 
+exec --no-startup-id feh --randomize --bg-fill /home/sakhile/Pictures/*
 
 # Use cmatrix for screensaver
 # bindsym $mod+m exec --no-startup-id kitty -e cmatrix -C green
@@ -47,6 +47,7 @@ exec --no-startup-id xinput set-prop 12 "libinput Tapping Enabled" 1
 
 # Set the Window Decorations: Use the for_window command to set the border style. You can set the border to "none" for specific applications or all applications.
 for_window [class="code"] border none
+for_window [class="Code"] border none
 # for_window [class="code"] floating enable
 for_window [class="vlc"] border none
 for_window [class="idea"] border none
@@ -66,6 +67,9 @@ for_window [class="discord"] border none
 for_window [class="KeePass2"] border none
 for_window [class="Postman"] border none
 for_window [class="Zathura"] border none
+for_window [class="dolphin"] border none
+for_window [class="firefox"] border none
+for_window [class="systemsettings"] border none
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -93,7 +97,7 @@ bindsym $mod+Return exec kitty
 bindsym $mod+Shift+q kill
 
 # start brave
-bindsym $mod+b exec brave
+bindsym $mod+b exec brave-browser
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id dmenu_run -nb '#282a36' -nf '#f8f8f2' -sb '#50fa7b' -sf '#282a36'
@@ -237,7 +241,7 @@ bar {
         }
 }
 
-gaps inner 5
+gaps inner 8 
 gaps outer 5
 
 # Add xscreensaver to Autostart:
