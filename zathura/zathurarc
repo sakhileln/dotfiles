@@ -1,0 +1,5 @@
+# Hide the entire status bar
+set guioptions none
+# Adjust Transparency
+# set statusbar-bg "#00000022"
+
