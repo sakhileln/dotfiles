@@ -1,44 +1,69 @@
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# Path to JAVA_HOME for development purposes
+export JAVA_HOME=/usr/lib64/jvm/java-17-openjdk
+export PATH=$JAVA_HOME/bin:$PATH
+export PATH=$PATH:/opt/android-studio/bin
 
-
-# Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME='sonicradish'
+# ZSH_THEME_RANDOM_CANDIDATES=(
+#  'theunraveler'
+#  "suvash"
+#  "fwalch"
+#  "fino"
+#  'lambda'
+#  'mlh'
+#  'wezm+'
+#  'tjkirch'
+#  'dieter'
+#  'wuffers'
+#  'strug'
+#  'arrow'
+#  'robbyrussell'
+#  'miloshadzic'
+#  'nanotech'
+#  'garyblessington'
+#  'simple'
+#  'eastwood'
+#  'sonicradish'
+#)
 
-plugins=(
-	git 
-	zsh-autosuggestions 
-	zsh-syntax-highlighting 	
-	)
+# ZSH_THEME="random" # set by `omz`
+
+plugins=( 
+    git
+    suse
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+    python
+)
 
 source $ZSH/oh-my-zsh.sh
 
-typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
+# check the suse plugins commands here
+# https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/suse/suse.plugin.zsh
 
-#alias for ls
-#alias ls='exa --icons'
-alias ll='ls -l'
-alias la='ls -la'
-alias vim='lvim'
-alias vi='lvim'
-#
-# for ranger to set nvim as default editor
-#
-export EDITOR='lvim'
+# Display Pokemon-colorscripts
+# Project page: https://gitlab.com/phoneybadger/pokemon-colorscripts#on-other-distros-and-macos
+pokemon-colorscripts --no-title -s -r
 
-export PATH=/home/xyz/.local/bin:$PATH
+# fastfetch. Will be disabled if above colorscript was chosen to install
+#fastfetch -c $HOME/.config/fastfetch/config-compact.jsonc
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-source ~/powerlevel10k/powerlevel10k.zsh-theme
+# Set-up FZF key bindings (CTRL R for fuzzy history finder)
+source <(fzf --zsh)
 
-# To add a extra blank line after every command 
-precmd(){
-  precmd(){
-    echo
-  }
-}
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt appendhistory
+
+# Set-up icons for files/folders in terminal using eza
+alias ls='eza -a --icons'
+alias ll='eza -al --icons'
+alias lt='eza -a --tree --level=1 --icons'
+alias shutdown='sudo shutdown now'
+alias v="lvim"
