@@ -4,7 +4,12 @@
 # Path to JAVA_HOME for development purposes
 export JAVA_HOME=/usr/lib64/jvm/java-17-openjdk
 export PATH=$JAVA_HOME/bin:$PATH
+# >>>>>>>>>>>> android-studio SDK >>>>>>>
 export PATH=$PATH:/opt/android-studio/bin
+
+# >>>>>>>> EDITOR >>>>>>>>>>>
+export EDITOR='lvim'
+export VISUAL='lvim'
 
 export ZSH="$HOME/.oh-my-zsh"
 
